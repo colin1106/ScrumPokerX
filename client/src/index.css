@@ -1,0 +1,23 @@
+.card {
+  padding: 10px;
+  border: 1px solid rgba(111, 85, 121, 0.13);
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 120px;
+  font-weight: bold;
+  font-size: 32px;
+  color: #5190BF;
+  border-radius: 10px;
+  caret-color: transparent;
+  background-color: #FFF;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover {
+  margin-top: -10px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 2px 0px, rgba(0, 0, 0, 0.02) 0px 1px 6px -1px, rgba(0, 0, 0, 0.02) 0px 2px 4px 0px;
+  background-color: #39f3149e;
+  color: #FFF;
+}
