@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
     io.emit('userJoined', name); // Send the user's name to the front end
 
     // Send the list of all users to the client
-    socket.emit('users', Array.from(users.values()).map(name => [name, points.get(name)]));
+    io.emit('users', Array.from(users.values()).map(name => [name, null]));
   });
 
   socket.on('select', (data) => {

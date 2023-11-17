@@ -26,17 +26,19 @@ function App() {
       // 更新结果状态
       setResults({min: data.min, max: data.max, avg: data.avg});
       console.log(data.points);
-      if (data.points.every(([n, p]) => p !== null)) {
+      if (data.points.every(([_, p]) => p !== null)) {
         setAllSelected(true);
       }
     });
 
     socket.on('userJoined', (name) => {
       setPoints((points) => [...points, [name, null]]);
+      setResults(null);
+      setAllSelected(false);
     });
 
     socket.on('userSelected', (name) => {
-      setPoints((points) => points.map(([n, p]) => n === name ? [n, p, true] : [n, p]));
+      setPoints((points) => points.map(([n, p, s]) => n === name ? [n, p, true] : [n, p, s]));
     });
 
     socket.on('userDisconnected', (name) => {
