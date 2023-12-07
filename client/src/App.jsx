@@ -85,7 +85,7 @@ function App() {
       </Space>
       {points && (
         <List
-          header={<Title level={3}>Points</Title>}
+          header={<Title level={3}>Users</Title>}
           style={{marginTop: '2em'}}
           bordered
           dataSource={points}
